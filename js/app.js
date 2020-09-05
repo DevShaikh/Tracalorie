@@ -117,12 +117,9 @@ const UICtrl = (function() {
       document.querySelector(UISelectors.itemList).style.display = 'none';
     },
     hidePreLoader: () => {
-      console.log('hide')
       const loader = document.querySelector(UISelectors.preLoader)
       loader.style.opacity = '0'
-      setTimeout(() => {
-        loader.style.display = 'none'
-      }, 500)
+      loader.style.zIndex = '0'
     }
   }
 })();
@@ -135,6 +132,8 @@ const App = (function(ItemCtrl, UICtrl) {
     const UISelectors = UICtrl.getUISelectors();
     // Add item event
     document.querySelector(UISelectors.addItem).addEventListener('submit', addItem)
+    // Hide Preloader
+    window.onload =  UICtrl.hidePreLoader()
   }
 
   // Add item event
@@ -182,9 +181,6 @@ const App = (function(ItemCtrl, UICtrl) {
 
       // Add total calories in UI
       UICtrl.addTotalCalories(totalCalories)
-
-      // Hide Preloader
-      UICtrl.hidePreLoader()
 
       // Load event listeners
       loadEventListeners();
