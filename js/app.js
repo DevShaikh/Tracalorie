@@ -118,8 +118,10 @@ const UICtrl = (function() {
     },
     hidePreLoader: () => {
       const loader = document.querySelector(UISelectors.preLoader)
-      loader.style.opacity = '0'
-      loader.style.zIndex = '0'
+      setTimeout(() => {
+        loader.style.opacity = '0'
+        loader.style.zIndex = '0'
+      }, 1500)
     }
   }
 })();
