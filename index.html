@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/materialize.min.css">
   <link rel="stylesheet" href="css/all.min.css">
+  <link rel="shortcut icon" href="kcal.png">
   <title>Tracalorie</title>
   <style>
     #preLoader {
@@ -23,10 +24,16 @@
       margin: 0 auto;
       top: 50%;
     }
+    .collection-item a {
+      cursor: initial;
+    }
+    .collection-item a i {
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-
+  <!-- PRE LOADER -->
   <div id="preLoader">
     <div class="preloader-wrapper big active">
       <div class="spinner-layer spinner-blue">
@@ -76,7 +83,7 @@
       <a href="#" class="brand-logo center">Tracalorie</a>
       <ul class="right">
         <li>
-          <a href="#" id="clearBtn" class="waves-effect waves-light btn red darken-2 ">Clear All</a></li>
+          <a href="#" id="clear-items" class="waves-effect waves-light btn red darken-2 ">Clear All</a></li>
       </ul>
     </div>
   </nav>
@@ -88,17 +95,17 @@
         <form id="item-form" class="col">
           <div class="row">
             <div class="input-field col s6">
-              <input type="text" id="item-name" autocomplete="off" required>
-              <label for="item-name">Add item</label>
+              <input type="text" id="item-name" placeholder="Add Item" autocomplete="off" required>
+              <label for="item-name">Add meal / food</label>
             </div>
             <div class="input-field col s6">
-              <input type="number" id="item-calories" autocomplete="off" required>
+              <input type="number" id="item-calories" placeholder="Add Calories" autocomplete="off" required>
               <label for="item-calories">Add Calories</label>
             </div>
-            <button type="submit" id="addItem" class="waves-effect waves-light btn red darken-2"><i class="fa fa-plus"></i> Add Item</button>
-            <!-- <button type="submit" id="updateItem" class="waves-effect waves-light btn yellow darken-4"><i class="fa fa-edit"></i> Update Item</button>
-            <button type="submit" id="deleteItem" class="waves-effect waves-light btn  red darken-2"><i class="fa fa-trash"></i> Delete Item</button> -->
-            <button type="submit" id="backItem" class="waves-effect waves-light btn grey darken-2 right"><i class="fa fa-arrow-circle-left"></i> Back</button>
+            <button type="submit" id="add-item" class="waves-effect waves-light btn red darken-2"><i class="fa fa-plus"></i> Add Item</button>
+            <button type="submit" id="update-item" class="waves-effect waves-light btn yellow darken-4"><i class="fa fa-edit"></i> Update Item</button>
+            <button type="button" id="delete-item" class="waves-effect waves-light btn  red darken-2"><i class="fa fa-trash"></i> Delete Item</button>
+            <button type="button" id="back-item" class="waves-effect waves-light btn grey darken-2 right"><i class="fa fa-arrow-circle-left"></i> Back</button>
           </div>
         </form>
       </div>
